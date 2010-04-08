@@ -1,0 +1,10 @@
+#N canvas 0 22 450 300 10;
+#X obj 152 186 +~ 261.626;
+#X obj 150 140 *~ 29.1352;
+#X text 177 160 range -22 to 22 midi;
+#X text 172 203 center at middle-c \, midi 60;
+#X obj 141 99 inlet~;
+#X obj 152 252 outlet~;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 0;

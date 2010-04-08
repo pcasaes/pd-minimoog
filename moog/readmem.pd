@@ -1,0 +1,10 @@
+#N canvas 896 507 450 300 10;
+#X obj 146 178 tabread \$1;
+#X obj 149 128 f \$2;
+#X obj 148 155 + \$3;
+#X obj 154 214 outlet;
+#X obj 150 79 r \$1.read;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 1 0;

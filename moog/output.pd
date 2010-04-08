@@ -1,0 +1,12 @@
+#N canvas 951 358 450 300 10;
+#X obj 75 41 catch~ \$1.filter.out;
+#X obj 127 81 catch~ \$1.loudness.adsd;
+#X obj 88 114 *~;
+#X obj 116 167 *~ 0.5;
+#X obj 149 121 r \$1.volume;
+#X obj 85 228 outlet~;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;

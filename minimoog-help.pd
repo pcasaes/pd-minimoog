@@ -1,0 +1,6 @@
+#N canvas 887 250 732 632 10;
+#X obj 106 83 minimoog 8201 default/mem1;
+#X obj 109 534 dac~;
+#X obj 219 41 moog/midi2osc 8201;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;

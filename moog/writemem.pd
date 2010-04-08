@@ -1,0 +1,15 @@
+#N canvas 628 451 450 300 10;
+#X obj 105 46 inlet;
+#X obj 149 128 f \$2;
+#X obj 148 155 + \$3;
+#X obj 99 98 t f b;
+#X obj 116 202 tabwrite \$1;
+#X obj 105 75 f;
+#X obj 22 36 r \$1.write;
+#X connect 0 0 5 1;
+#X connect 1 0 2 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 3 1 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;

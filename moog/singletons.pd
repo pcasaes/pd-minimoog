@@ -1,0 +1,9 @@
+#N canvas 507 283 450 300 10;
+#X obj 80 98 singleton/instance moog/wt/tri;
+#X obj 78 126 singleton/instance moog/wt/usplitramp;
+#X obj 73 154 singleton/instance moog/wt/saw;
+#X obj 74 180 singleton/instance moog/wt/rsaw;
+#X obj 71 204 singleton/instance moog/wt/sq;
+#X obj 79 221 singleton/instance moog/wt/widepulse;
+#X obj 84 241 singleton/instance moog/wt/narrowpulse;
+#X obj 96 60 singleton/instance moog/staticMem;

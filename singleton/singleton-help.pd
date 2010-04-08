@@ -1,0 +1,5 @@
+#N canvas 701 250 450 300 10;
+#X obj 121 32 singleton/instance noise~;
+#X obj 130 53 singleton/instance noise~;
+#X obj 119 95 singleton/instance random;
+#X obj 129 132 singleton/instance random;

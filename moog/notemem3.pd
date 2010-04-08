@@ -31,7 +31,7 @@
 #X obj 199 294 t b b;
 #X obj 321 66 moses 128;
 #X obj 108 71 t f f f;
-#X obj 347 152 counter;
+#X obj 347 152 cyclone/counter;
 #X connect 0 0 10 1;
 #X connect 1 0 31 2;
 #X connect 2 0 23 0;

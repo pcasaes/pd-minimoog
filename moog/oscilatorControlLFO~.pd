@@ -203,14 +203,14 @@
 #X obj 100 100 cnv 15 315 100 empty empty empty 20 12 0 14 -117497
 -66577 0;
 #X obj 101 101 hradio 15 1 1 6 \$0.octave \$0.octave.set empty 0 -8
-0 10 -20806 -117497 -1 5;
+0 10 -20806 -117497 -1 0;
 #X obj 101 136 hradio 15 1 1 6 \$0.osc.type \$0.osc.type.set empty
-0 -8 0 10 -20806 -117497 -1 1;
+0 -8 0 10 -20806 -117497 -1 3;
 #X obj 205 113 knob 32 32 -9 9 0 0 \$0.tune.fader \$0.tune.fader.set
 fine_tune -12 -8 192 9 -262144 -257985 -1 1533 1;
-#X obj 101 152 cnv 15 90 18 empty \$0.osc.label rsawtooth 5 8 0 14
--117497 -1 0;
-#X obj 101 117 cnv 15 90 18 empty \$0.octave.label 6_octave 5 8 0 14
+#X obj 101 152 cnv 15 90 18 empty \$0.osc.label square 5 8 0 14 -117497
+-1 0;
+#X obj 101 117 cnv 15 90 18 empty \$0.octave.label 1_octave 5 8 0 14
 -117497 -1 0;
 #X obj 204 154 nbx 5 14 -1e+37 1e+37 0 0 \$0.tune \$0.tune.set empty
 0 -8 0 10 -257985 -1 -1 -0.0987097 256;
@@ -237,7 +237,7 @@ empty 0 -8 0 10 -4160 -117497 -1 -0 256;
 #X obj 392 180 cnv 15 20 20 empty empty osc 2 10 0 10 -117497 -1 0
 ;
 #X obj 103 182 nbx 4 14 -1e+37 1e+37 0 0 \$0.freq.ro \$0.freq.set empty
-0 -8 0 10 -1 -117497 -1 0.998931 256;
+0 -8 0 10 -1 -117497 -1 255.726 256;
 #X obj -64 143 s \$0.noise.mod.set;
 #X obj -50 216 r \$0.noise.mod;
 #X obj 149 248 r \$0.noise.type;
@@ -444,6 +444,7 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X connect 76 0 11 1;
 #X connect 76 0 21 8;
 #X connect 76 0 13 0;
+#X connect 76 0 20 3;
 #X connect 77 0 71 0;
 #X connect 77 1 74 0;
 #X connect 77 2 64 0;

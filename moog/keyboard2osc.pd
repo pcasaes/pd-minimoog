@@ -1,5 +1,5 @@
 #N canvas 989 492 630 355 10;
-#X obj 69 20 key;
+#X obj 58 10 key;
 #X msg 103 192 \$1 127;
 #X obj 114 95 del 1;
 #X obj 135 128 f;
@@ -10,7 +10,7 @@
 #X obj 280 192 netsend 1;
 #X obj 317 128 r \$0.send;
 #X msg 115 239 send /moog/vc \$1 \$2;
-#X obj 185 11 keyup;
+#X obj 186 1 keyup;
 #X obj 144 61 b;
 #X obj 134 158 demux 0 1;
 #X msg 166 201 \$1 0;
@@ -20,9 +20,11 @@
 #X obj 233 90 b;
 #X obj 270 266 spigot 0;
 #X obj 450 188 inlet enable;
-#X obj 38 68 moses 1;
-#X obj 206 36 moses 1;
-#X connect 0 0 21 0;
+#X obj 194 59 moses 1;
+#X obj 38 68 moses 0;
+#X obj 52 31 moses 301;
+#X obj 186 32 moses 301;
+#X connect 0 0 23 0;
 #X connect 1 0 10 0;
 #X connect 2 0 3 0;
 #X connect 3 0 13 0;
@@ -32,7 +34,7 @@
 #X connect 7 0 8 0;
 #X connect 9 0 8 0;
 #X connect 10 0 19 0;
-#X connect 11 0 22 0;
+#X connect 11 0 24 0;
 #X connect 12 0 2 0;
 #X connect 13 0 1 0;
 #X connect 13 1 16 0;
@@ -43,8 +45,10 @@
 #X connect 18 0 17 0;
 #X connect 19 0 8 0;
 #X connect 20 0 19 1;
-#X connect 21 1 3 1;
-#X connect 21 1 12 0;
-#X connect 22 1 18 0;
-#X connect 22 1 15 0;
-#X connect 22 1 14 0;
+#X connect 21 1 18 0;
+#X connect 21 1 15 0;
+#X connect 21 1 14 0;
+#X connect 22 1 3 1;
+#X connect 22 1 12 0;
+#X connect 23 0 22 0;
+#X connect 24 0 21 0;

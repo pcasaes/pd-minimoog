@@ -1,0 +1,21 @@
+#N canvas 468 270 635 316 10;
+#X obj 52 37 inlet;
+#X obj 533 252 outlet;
+#X obj 48 77 route /moog/envelope/\$2 /moog/envelope/\$2/attack /moog/envelope/\$2/decay
+/moog/envelope/\$2/sustain /moog/envelope/\$2/release;
+#X obj 44 135 unpack f f f f;
+#X obj 28 225 s \$1.ctrl.envelope.\$2.attack;
+#X obj 98 196 s \$1.ctrl.envelope.\$2.decay;
+#X obj 238 228 s \$1.ctrl.envelope.\$2.sustain;
+#X obj 277 166 s \$1.ctrl.envelope.\$2.release;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 2 4 7 0;
+#X connect 2 5 1 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 7 0;

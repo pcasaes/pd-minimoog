@@ -1,0 +1,25 @@
+#N canvas 514 528 479 333 10;
+#X obj 131 -13 inlet;
+#X msg 65 136 /moog/envelope/\$1 attack:(10-10000) decay:(1-700) sustain:(0-100)
+release:(0 or 1);
+#X obj 109 293 s \$1.msg.out;
+#X msg 143 105 /moog/envelope/\$1/attack value:(10-10000);
+#X msg 142 187 /moog/envelope/\$1/decay value:(1-700);
+#X obj 239 82 outlet;
+#X msg 159 207 /moog/envelope/\$1/sustain value:(0-100);
+#X msg 163 232 /moog/envelope/\$1/release value:(0 or 1);
+#X obj 129 23 symbol \$2;
+#X obj 142 52 t s s s s s b;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 9 1 3 0;
+#X connect 9 2 4 0;
+#X connect 9 3 6 0;
+#X connect 9 4 7 0;
+#X connect 9 5 5 0;

@@ -110,8 +110,6 @@
 #X obj 368 79 throw~ \$0.external.in;
 #X obj 100 100 moog/presets \$0 \$2;
 #X obj 403 642 moog/oscr \$1 \$0;
-#X obj 416 364 moog/adsd~ \$0.memory \$0.loudness 30 Amp \$0;
-#X obj 416 232 moog/adsd~ \$0.memory \$0.filter 26 Filter \$0;
 #X obj 582 139 vsl 36 338 101 1 1 0 \$0.master.vol \$0.master.vol.set
 empty 0 -9 0 10 -4160 -261234 -1 19491 1;
 #N canvas 0 22 839 364 vol 0;
@@ -195,8 +193,11 @@ empty 0 -8 0 10 -4160 -117497 -1 94.0002 256;
 #X text 39 70 GPL v2. see COPYING;
 #X text 50 95 http://gitorious.org/pd-minimoog;
 #X restore 69 633 pd copyright;
+#X obj 416 232 moog/adsd~ \$0.memory \$0.filter 26 Filter \$0 filter
+;
+#X obj 416 364 moog/adsd~ \$0.memory \$0.loudness 30 Amp \$0 amp;
 #X connect 0 0 12 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
-#X connect 9 0 20 0;
+#X connect 9 0 18 0;
 #X coords 0 -1 1 1 518 396 2 100 100;

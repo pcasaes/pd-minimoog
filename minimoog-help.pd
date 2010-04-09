@@ -1,7 +1,46 @@
-#N canvas 548 250 732 632 10;
-#X obj 106 83 minimoog 8201 default/mem1;
-#X obj 109 534 dac~;
-#X obj 219 41 moog/midi2osc 8201;
-#X obj 369 36 symbol moog/keyboard2osc 8201;
-#X connect 0 0 1 0;
-#X connect 0 0 1 1;
+#N canvas 197 212 966 672 10;
+#X obj 291 580 dac~;
+#X obj 550 79 tgl 15 0 empty empty enable_keyboard_controller 17 7
+0 10 -262144 -1 -1 0 1;
+#X text 571 95 computer keyboard controller \, number pad sounds good
+;
+#X text 572 31 Generic midi to osc \, works well with midi keyboards
+;
+#X text 303 121 External input inlet;
+#X text 328 560 Mono output;
+#X text 821 162 Enable toggle;
+#X text 820 359 Master volume;
+#X text -53 158 All presets are saved to a group (the first popup).
+If a group is not specified then default is used. To specify a group
+use a period to seperate the preset name from its group: group.preset
+;
+#X text -54 217 If more than one period is used than the preset name
+will be the word after the last period mark: group.moregroup.preset
+;
+#X text -55 260 Spaces are converted to _;
+#X text -56 276 An enter in the entry box will automatically save with
+the inputed value.;
+#X obj -49 352 tgl 15 0 empty empty vel 17 7 0 10 -232576 -1 -1 0 1
+;
+#X text -60 368 vel in the Portamento box is the only control not in
+the original minimoog. The original minimoog does not interpret keyboard
+velocity values \, with the toggle enabled this minimoog will.;
+#X obj 301 158 minimoog 8202 default.mem1;
+#X obj 544 51 moog/midi2osc 8202;
+#X obj 551 117 moog/keyboard2osc 8202;
+#X text 392 593 to create: minimoog oscport (load.preset);
+#X text 400 613 example: [minimoog 8201 default.mem2];
+#X text -47 3 (C) Paulo Casaes \, 2010 GPL v2;
+#X text -39 636 DISCLAIMER: not affiliated with Moog Music in any way
+\, just a fan of the original.;
+#X text -51 71 Requires muug~ \, http://gitorious.org/muug;
+#X text -46 24 requires PD-Extended-0.41 \, check console for errors.
+Make sure nothing like cyclone/counter \, log~ \, getdir \, popup or
+entry aren't missing.;
+#X text -51 479 Tested on OSX and Linux. There are unresolved issues
+on windows. popup seems to not work.;
+#X obj 287 100 osc~ 440;
+#X connect 1 0 16 0;
+#X connect 14 0 0 0;
+#X connect 14 0 0 1;
+#X connect 24 0 14 0;

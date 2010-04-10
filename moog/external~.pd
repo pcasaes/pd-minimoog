@@ -3,12 +3,12 @@
 #X obj -333 214 *~;
 #X obj 3 219 moog/writemem \$2 \$3;
 #X obj -13 0 moog/readmem \$2 \$3;
-#N canvas 454 66 318 245 ivol 0;
+#N canvas 711 108 318 245 ivol 0;
 #X obj 97 43 inlet;
 #X obj 132 175 outlet;
 #X obj 125 118 * -1;
 #X obj 126 141 + 1;
-#X obj 124 99 - 100;
+#X obj 124 99 - 106;
 #X connect 0 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
@@ -17,21 +17,20 @@
 #X obj -329 236 throw~ \$1.mix;
 #X obj 100 100 cnv 15 100 80 empty empty External_in 2 12 0 14 -117497
 -66577 0;
-#X obj 110 128 knob 32 32 101 1 1 0 empty empty empty 0 -8 0 8 -262144
--4160 -1 3100 1;
-#X floatatom -74 245 5 0 0 0 - - -;
-#X obj 149 146 nbx 3 14 -1e+37 1e+37 0 0 empty empty volume 0 -8 0
-10 -4160 -117497 -1 100 256;
+#X obj 110 128 knob 32 32 107 1 1 0 empty empty empty 0 -8 0 8 -262144
+-4160 -1 1397 1;
+#X obj 149 146 nbx 4 14 -1e+37 1e+37 0 0 empty empty volume 0 -8 0
+10 -4160 -117497 -1 93.9728 256;
 #N canvas 0 22 318 245 vol 0;
 #X obj 124 99 - 1;
-#X obj 125 118 - 100;
 #X obj 126 141 * -1;
 #X obj 97 43 inlet;
 #X obj 132 175 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 4 0;
-#X connect 3 0 0 0;
+#X obj 125 118 - 106;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 1 0;
 #X restore 136 196 pd vol;
 #X msg 86 71 set \$1;
 #N canvas 454 66 318 245 ivol 0;
@@ -39,7 +38,7 @@
 #X obj 132 175 outlet;
 #X obj 125 118 * -1;
 #X obj 126 141 + 1;
-#X obj 124 99 - 100;
+#X obj 124 99 - 106;
 #X connect 0 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
@@ -48,17 +47,24 @@
 #X obj 100 171 cnv 15 100 20 empty empty empty 20 12 0 14 -240285 -66577
 0;
 #X obj -305 38 catch~ \$1.external.in;
-#X connect 0 0 1 1;
-#X connect 0 0 8 0;
+#X obj -150 73 r \$1.ctrl.external.volume.db;
+#X obj -149 95 r \$1.ctrl.external.volume.rms;
+#X obj -67 123 rmstodb;
+#X obj -110 238 moog/smooth;
+#X connect 0 0 17 0;
 #X connect 1 0 5 0;
 #X connect 3 0 4 0;
 #X connect 4 0 7 0;
-#X connect 7 0 10 0;
-#X connect 9 0 12 0;
-#X connect 9 0 2 0;
-#X connect 9 0 0 0;
-#X connect 10 0 9 0;
-#X connect 11 0 7 0;
-#X connect 12 0 11 0;
-#X connect 14 0 1 0;
+#X connect 7 0 9 0;
+#X connect 8 0 11 0;
+#X connect 8 0 2 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 7 0;
+#X connect 11 0 10 0;
+#X connect 13 0 1 0;
+#X connect 14 0 4 0;
+#X connect 15 0 16 0;
+#X connect 16 0 4 0;
+#X connect 17 0 1 1;
 #X coords 0 -1 1 1 100 91 2 100 100;

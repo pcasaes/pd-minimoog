@@ -63,6 +63,7 @@
 #X obj 115 201 - 0.03;
 #X obj 280 160 + 0.03;
 #X obj 225 115 + 0.03;
+#X obj 251 39 r \$4.ctrl.vc.portamento;
 #X connect 0 0 2 0;
 #X connect 1 0 20 0;
 #X connect 2 0 1 0;
@@ -113,4 +114,5 @@
 #X connect 42 0 38 0;
 #X connect 43 0 40 0;
 #X connect 44 0 36 0;
+#X connect 45 0 44 0;
 #X coords 0 -1 1 1 100 91 2 100 100;

@@ -1,4 +1,4 @@
-#N canvas 792 277 816 669 10;
+#N canvas 864 266 816 669 10;
 #X obj 370 41 inlet~;
 #N canvas 482 145 599 597 voltagenoise 0;
 #X obj 177 90 del 5;
@@ -186,8 +186,6 @@ empty 0 -9 0 10 -4160 -261234 -1 19491 1;
 #X obj 582 481 nbx 3 14 -1e+37 1e+37 0 0 \$0.volume.dis \$0.volume.dis.set
 empty 0 -8 0 10 -4160 -117497 -1 94.0002 256;
 #X obj 531 571 outlet~;
-#X obj 100 211 moog/oscilatorControl~ \$0.memory 0 \$0 34;
-#X obj 100 303 moog/oscilatorControl~ \$0.memory 4 \$0 35;
 #N canvas 871 124 450 300 copyright 0;
 #X text 31 37 (c) Paulo Casaes \, 2010;
 #X text 39 70 GPL v2. see COPYING;
@@ -196,6 +194,8 @@ empty 0 -8 0 10 -4160 -117497 -1 94.0002 256;
 #X obj 416 232 moog/adsd~ \$0.memory \$0.filter 26 Filter \$0 filter
 ;
 #X obj 416 364 moog/adsd~ \$0.memory \$0.loudness 30 Amp \$0 amp;
+#X obj 100 211 moog/oscilatorControl~ \$0.memory 0 \$0 34 1;
+#X obj 100 303 moog/oscilatorControl~ \$0.memory 4 \$0 35 2;
 #X connect 0 0 12 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;

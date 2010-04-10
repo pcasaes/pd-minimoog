@@ -102,9 +102,9 @@
 #X obj 101 136 hradio 15 1 1 6 empty empty empty 0 -8 0 10 -20806 -117497
 -1 2;
 #X obj 205 113 knob 32 32 -9 9 0 0 \$0.tune.fader \$0.tune.fader.set
-fine_tune -12 -8 192 9 -262144 -257985 -1 0 1;
+fine_tune -12 -8 192 9 -262144 -257985 -1 1550 1;
 #X obj 266 112 knob 32 32 101 1 1 1 \$0.vol.osc.fader \$0.vol.osc.fader.set
-volume 0 -8 192 9 -258113 -4160 -1 3100 1;
+volume 0 -8 192 9 -258113 -4160 -1 0 1;
 #X obj 101 152 cnv 15 90 18 empty \$0.waveform sawtooth 5 8 0 14 -117497
 -1 0;
 #X obj 357 270 s \$0.waveform;
@@ -114,7 +114,7 @@ volume 0 -8 192 9 -258113 -4160 -1 3100 1;
 #X obj 465 271 s \$0.octave;
 #X msg 450 235 label \$1_octave;
 #X obj 265 154 nbx 3 14 -1e+37 1e+37 0 0 \$0.vol.osc \$0.vol.osc.set
-empty 0 -8 0 10 -4160 -117497 -1 100 256;
+empty 0 -8 0 10 -4160 -117497 -1 -0 256;
 #X obj 204 154 nbx 5 14 -1e+37 1e+37 0 0 \$0.tune \$0.tune.set empty
 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 15 43 r~ \$3.vc;
@@ -201,6 +201,7 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X obj 16 -73 r \$3.ctrl.oscillator.\$5.octave;
 #X obj 43 -44 r \$3.ctrl.oscillator.\$5.waveform;
 #X obj 100 171 moog/mod~ \$1 \$4 \$3 \$5;
+#X obj 45 266 moog/smooth;
 #X connect 2 0 1 0;
 #X connect 2 0 20 0;
 #X connect 3 0 4 1;
@@ -208,7 +209,7 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X connect 5 0 28 0;
 #X connect 6 0 5 1;
 #X connect 6 0 10 0;
-#X connect 7 0 8 1;
+#X connect 7 0 48 0;
 #X connect 8 0 27 0;
 #X connect 9 0 29 0;
 #X connect 12 0 14 0;
@@ -244,4 +245,5 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X connect 45 0 14 0;
 #X connect 46 0 15 0;
 #X connect 47 0 4 0;
+#X connect 48 0 8 1;
 #X coords 0 -1 1 1 214 91 2 100 100;

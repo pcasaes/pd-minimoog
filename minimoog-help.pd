@@ -27,20 +27,23 @@ the original minimoog. The original minimoog does not interpret keyboard
 velocity values \, with the toggle enabled this minimoog will.;
 #X obj 301 158 minimoog 8202 default.mem1;
 #X obj 544 51 moog/midi2osc 8202;
-#X obj 551 117 moog/keyboard2osc 8202;
+#X obj 551 132 moog/keyboard2osc 8202;
 #X text 392 593 to create: minimoog oscport (load.preset);
 #X text 400 613 example: [minimoog 8201 default.mem2];
-#X text -47 3 (C) Paulo Casaes \, 2010 GPL v2;
 #X text -39 636 DISCLAIMER: not affiliated with Moog Music in any way
 \, just a fan of the original.;
 #X text -51 71 Requires muug~ \, http://gitorious.org/muug;
-#X text -46 24 requires PD-Extended-0.41 \, check console for errors.
-Make sure nothing like cyclone/counter \, log~ \, getdir \, popup or
-entry aren't missing.;
-#X text -51 479 Tested on OSX and Linux. There are unresolved issues
+#X text -50 532 Tested on OSX and Linux. There are unresolved issues
 on windows. popup seems to not work.;
 #X obj 287 100 osc~ 440;
+#X text -55 456 I guessed on l and k so they may not be acting like
+the do on the real thing;
+#X text -47 3 (C) Paulo Casaes \, 2010 GPL v2 \, v 0.9;
+#X text 575 112 does not work very well;
+#X text -46 24 requires PD-Extended-0.41 \, check console for errors.
+Make sure nothing like cyclone/counter \, log~ \, getdir \, netsend
+\, netreceive \, popup or entry are missing.;
 #X connect 1 0 16 0;
 #X connect 14 0 0 0;
 #X connect 14 0 0 1;
-#X connect 24 0 14 0;
+#X connect 22 0 14 0;

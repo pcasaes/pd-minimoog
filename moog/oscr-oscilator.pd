@@ -1,12 +1,9 @@
-#N canvas 346 178 635 316 10;
+#N canvas 987 205 635 316 10;
 #X obj 52 37 inlet;
 #X obj 471 97 outlet;
 #X obj -15 251 s \$1.ctrl.oscillator.\$2.octave;
 #X obj 173 287 s \$1.ctrl.oscillator.\$2.waveform;
 #X obj 286 245 s \$1.ctrl.oscillator.\$2.finetune;
-#X obj 57 60 route /moog/oscillator/\$2 /moog/oscillator/\$2/octave
-/moog/oscillator/\$2/waveform /moog/oscillator/\$2/finetune /moog/oscillator/\$2/volume/rms
-/moog/oscillator/\$2/volume/db /moog/oscillator/\$2/mod;
 #X obj 330 211 s \$1.ctrl.oscillator.\$2.volume.rms;
 #X obj 370 171 s \$1.ctrl.oscillator.\$2.volume.db;
 #X obj 396 137 s \$1.ctrl.oscillator.\$2.mod;
@@ -42,19 +39,27 @@
 #X connect 10 1 11 0;
 #X connect 11 0 1 0;
 #X restore 143 208 pd translate;
-#X obj 36 127 unpack f f f f f;
-#X connect 0 0 5 0;
-#X connect 5 0 10 0;
-#X connect 5 1 2 0;
-#X connect 5 2 9 0;
-#X connect 5 3 4 0;
-#X connect 5 4 6 0;
-#X connect 5 5 7 0;
-#X connect 5 6 8 0;
-#X connect 5 7 1 0;
-#X connect 9 0 3 0;
-#X connect 10 0 2 0;
-#X connect 10 1 3 0;
-#X connect 10 2 4 0;
-#X connect 10 3 6 0;
-#X connect 10 4 8 0;
+#X obj 13 127 unpack f f f f f;
+#X obj 139 30 route /\$2;
+#X obj 229 30 mrpeach/routeOSC /\$2;
+#X obj 57 60 route /octave /waveform /finetune /volume/rms /volume/db
+/mod;
+#X obj 420 100 outlet;
+#X connect 0 0 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 2 0;
+#X connect 9 1 3 0;
+#X connect 9 2 4 0;
+#X connect 9 3 5 0;
+#X connect 9 4 7 0;
+#X connect 10 0 9 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 1 0;
+#X connect 12 0 2 0;
+#X connect 12 1 8 0;
+#X connect 12 2 4 0;
+#X connect 12 3 5 0;
+#X connect 12 4 6 0;
+#X connect 12 5 7 0;
+#X connect 12 6 13 0;

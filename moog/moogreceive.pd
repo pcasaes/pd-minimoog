@@ -1,0 +1,4 @@
+#N canvas 697 168 450 300 10;
+#X obj 57 92 connect/\$1Receive \$2;
+#X obj 50 129 outlet;
+#X connect 0 0 1 0;

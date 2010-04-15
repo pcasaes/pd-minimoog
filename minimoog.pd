@@ -100,7 +100,7 @@
 #X obj 582 100 tgl 36 1 empty empty empty 22 9 0 10 -114112 -1 -1 1
 1;
 #N canvas 0 22 450 300 memory 0;
-#X obj 68 56 table \$0.memory 38;
+#X obj 68 56 table \$0.memory 39;
 #X restore 684 626 pd memory;
 #X obj 315 211 moog/external~ \$0 \$0.memory 17;
 #X obj 526 534 moog/output \$0;

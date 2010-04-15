@@ -34,14 +34,13 @@ velocity values \, with the toggle enabled this minimoog will.;
 \, just a fan of the original.;
 #X text -51 71 Requires muug~ \, http://gitorious.org/muug;
 #X obj 287 100 osc~ 440;
-#X text -55 456 I guessed on l and k so they may not be acting like
+#X text -58 430 I guessed on l and k so they may not be acting like
 the do on the real thing;
 #X text 575 112 does not work very well;
-#X text -47 3 (C) Paulo Casaes \, 2010 GPL v2 \, v 0.91;
 #X text -46 24 requires PD-Extended-0.41 \, check console for errors.
 Make sure nothing like cyclone/counter \, log~ \, getdir \, netsend
 \, netreceive \, mrpeach/udpsend \, popup or entry are missing.;
-#X text -50 532 Tested on OS X and Linux. There are unresolved issues
+#X text -52 562 Tested on OS X and Linux. There are unresolved issues
 on windows. popup seems to not work.;
 #N canvas 1011 457 623 400 how_to_use_OSC 0;
 #X obj 27 140 moog/moogsend osc localhost 8202;
@@ -75,6 +74,13 @@ a different version of netsend and netreceive out there.;
 #X connect 4 0 1 0;
 #X connect 5 0 1 0;
 #X restore 546 13 pd how_to_use_OSC;
+#X text -47 3 (C) Paulo Casaes \, 2010 GPL v2 \, v 0.92;
+#X text -53 469 Added an antialiasing before the filter. It takes up
+juice so only turn it on when you need it. That's when sampling rate
+is at 44.1 (maybe 48) kHz and the actual filter frequency hovers above
+10kHz. The actual filter frequency depends on freq \, contour \, k
+and l. If both k and l are on and the contour is low you probably won't
+need the it.;
 #X connect 1 0 16 0;
 #X connect 14 0 0 0;
 #X connect 14 0 0 1;

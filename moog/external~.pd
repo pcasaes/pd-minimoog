@@ -17,7 +17,7 @@
 #X obj -329 236 throw~ \$1.mix;
 #X obj 100 100 cnv 15 100 80 empty empty External_in 2 12 0 14 -117497
 -66577 0;
-#X obj 110 128 knob 32 32 107 1 1 0 empty empty empty 0 -8 0 8 -262144
+#X obj 110 128 flatgui/knob 32 32 107 1 1 0 empty empty empty 0 -8 0 8 -262144
 -4160 -1 1397 1;
 #X obj 149 146 nbx 4 14 -1e+37 1e+37 0 0 empty empty volume 0 -8 0
 10 -4160 -117497 -1 93.9728 256;

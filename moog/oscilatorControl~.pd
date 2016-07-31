@@ -101,9 +101,9 @@
 -1 0;
 #X obj 101 136 hradio 15 1 1 6 empty empty empty 0 -8 0 10 -20806 -117497
 -1 2;
-#X obj 205 113 knob 32 32 -9 9 0 0 \$0.tune.fader \$0.tune.fader.set
+#X obj 205 113 flatgui/knob 32 32 -9 9 0 0 \$0.tune.fader \$0.tune.fader.set
 fine_tune -12 -8 192 9 -262144 -257985 -1 1550 1;
-#X obj 266 112 knob 32 32 101 1 1 1 \$0.vol.osc.fader \$0.vol.osc.fader.set
+#X obj 266 112 flatgui/knob 32 32 101 1 1 1 \$0.vol.osc.fader \$0.vol.osc.fader.set
 volume 0 -8 192 9 -258113 -4160 -1 0 1;
 #X obj 101 152 cnv 15 90 18 empty \$0.waveform sawtooth 5 8 0 14 -117497
 -1 0;

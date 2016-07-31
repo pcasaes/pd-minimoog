@@ -1,7 +1,7 @@
 #N canvas 1167 286 506 467 10;
-#X obj 152 -63 splitfilename;
+#X obj 152 -63 iemlib/splitfilename;
 #X obj 159 126 demux 0 1;
-#X obj 287 -49 strippath;
+#X obj 287 -49 ext13/strippath;
 #X obj 277 80 sel word;
 #X msg 238 106 1;
 #X msg 228 71 0;

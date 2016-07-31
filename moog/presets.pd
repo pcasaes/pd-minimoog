@@ -5,7 +5,7 @@
 #X obj -224 186 pack s \$1 s;
 #X obj 0 0 cnv 15 315 110 empty empty Presets 200 10 0 14 -49933 -228856
 0;
-#X obj 4 51 popup 300 27 grey90 popup mem1 mem2 mem3 mem4 mem5 mem6
+#X obj 4 51 flatgui/popup 300 27 grey90 popup mem1 mem2 mem3 mem4 mem5 mem6
 mem7;
 #X obj -81 42 r \$0.combo;
 #X obj 345 92 s \$0.combo.text;
@@ -24,7 +24,7 @@ mem7;
 #X obj -235 -99 loadbang;
 #X obj -226 -81 del 5;
 #X msg -46 -49 option relief flat;
-#X obj 78 83 entry 166 20 white black;
+#X obj 78 83 flatgui/entry 166 20 white black;
 #X obj 273 -63 r \$0.current.set;
 #X obj 80 115 s \$0.current;
 #X obj 261 145 s \$0.current.set;
@@ -33,13 +33,13 @@ mem7;
 #X obj 423 211 select return;
 #X msg 447 234 bang \, clear;
 #X obj 423 279 s \$0.current.set;
-#X obj 4 20 popup 300 27 grey90 popup carpete default fujimo.hh violanoise.pressa
+#X obj 4 20 flatgui/popup 300 27 grey90 popup carpete default fujimo.hh violanoise.pressa
 ;
 #X obj -5 -25 r \$0.folder;
 #X obj 333 -8 r \$0.folder.text.set;
 #X obj 338 29 s \$0.folder.text;
 #N canvas 311 503 1167 393 folder 0;
-#X obj -283 25 folder_list;
+#X obj -283 25 hcs/folder_list;
 #X obj -269 -35 getdir;
 #X obj -277 -81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -47,16 +47,16 @@ mem7;
 #X msg -203 71 append \$1;
 #X obj -243 -64 t b b;
 #X obj -229 -117 del 5;
-#X obj -114 18 splitfilename;
+#X obj -114 18 iemlib/splitfilename;
 #X obj -266 127 s \$0.folder;
 #X obj -265 -124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 163 -170 r \$0.folder.text;
 #X obj 163 -44 pack s s;
-#X obj 193 43 folder_list;
+#X obj 193 43 hcs/folder_list;
 #X msg 161 63 options;
 #X msg 284 68 append \$1;
-#X obj 366 -5 splitfilename;
+#X obj 366 -5 iemlib/splitfilename;
 #X obj 210 145 s \$0.combo;
 #X msg -191 -31 symbol \$1/presets/*;
 #X obj 142 -87 t s b s;
@@ -99,7 +99,7 @@ mem7;
 #X msg 180 10 symbol \$2/presets/\$1.*;
 #X obj 467 12 s2l .;
 #X obj 471 35 l2s /;
-#X obj 434 66 splitfilename;
+#X obj 434 66 iemlib/splitfilename;
 #X obj -318 -205 r \$0.ready;
 #X obj -311 -182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;

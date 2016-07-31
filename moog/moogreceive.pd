@@ -1,4 +1,6 @@
 #N canvas 697 168 450 300 10;
 #X obj 57 92 connect/\$1Receive \$2;
 #X obj 50 129 outlet;
+#X obj 110 132 print;
 #X connect 0 0 1 0;
+#X connect 0 0 2 0;

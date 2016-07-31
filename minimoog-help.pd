@@ -1,4 +1,4 @@
-#N canvas 352 180 966 672 10;
+#N canvas 330 86 966 672 10;
 #X obj 291 580 dac~;
 #X obj 550 79 tgl 15 0 empty empty enable_keyboard_controller 17 7
 0 10 -262144 -1 -1 0 1;
@@ -69,15 +69,10 @@ using mrpeach's objects tomorrow might be some others. There's even
 a different version of netsend and netreceive out there.;
 #X msg 49 74 send /moog/vc 54 0;
 #X msg 41 31 send /moog/vc 54 1;
-#X msg 78 97 send /moog/vc/54 1;
-#X msg 79 118 send /moog/vc/54 0;
-#X text 200 101 <-alternative;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
 #X connect 13 0 0 0;
 #X connect 14 0 0 0;
-#X connect 15 0 0 0;
-#X connect 16 0 0 0;
 #X restore 546 13 pd how_to_use_OSC;
 #X text -47 3 (C) Paulo Casaes \, 2010 GPL v2 \, v 0.92;
 #X text -53 469 Added an antialiasing before the filter. It takes up

@@ -1,5 +1,6 @@
 #N canvas 219 54 816 669 10;
 #X declare -stdlib zexy/zexy;
+#X declare -stdpath pd-minimoog;
 #X obj 370 41 inlet~;
 #N canvas 482 145 599 597 voltagenoise 0;
 #X obj 177 90 del 5;
@@ -100,7 +101,7 @@
 #X obj 646 126 switch~;
 #X obj 582 100 tgl 36 1 empty empty empty 22 9 0 10 -114112 -1 -1 1
 1;
-#N canvas 0 22 450 300 memory 0;
+#N canvas 0 50 450 300 memory 0;
 #X obj 68 56 table \$0.memory 39;
 #X restore 684 626 pd memory;
 #X obj 315 211 moog/external~ \$0 \$0.memory 17;
@@ -109,13 +110,12 @@
 #X obj 315 303 moog/controls \$0.memory \$2 18 \$0;
 #X obj 368 79 throw~ \$0.external.in;
 #X obj 100 100 moog/presets \$0 \$2;
-#X obj 403 642 moog/oscr \$1 \$0;
 #X obj 582 139 vsl 36 338 101 1 1 0 \$0.master.vol \$0.master.vol.set
-empty 0 -9 0 10 -4160 -261234 -1 33700 1;
-#N canvas 0 22 839 364 vol 0;
+empty 0 -9 0 10 -4160 -261234 -1 19491 1;
+#N canvas 0 50 839 364 vol 0;
 #X obj 203 231 r \$0.master.vol;
 #X obj 148 205 s \$0.master.vol.set;
-#N canvas 0 22 318 245 vol 0;
+#N canvas 0 50 318 245 vol 0;
 #X obj 124 99 - 1;
 #X obj 125 118 - 100;
 #X obj 126 141 * -1;
@@ -183,8 +183,8 @@ empty 0 -9 0 10 -4160 -261234 -1 33700 1;
 #X connect 18 0 17 0;
 #X connect 19 0 3 0;
 #X restore 693 558 pd vol;
-#X obj 582 481 nbx 3 14 -1e+37 1e+37 0 0 \$0.volume.dis \$0.volume.dis.set
-empty 0 -8 0 10 -4160 -117497 -1 100 256;
+#X obj 582 481 nbx 3 14 -1e+037 1e+037 0 0 \$0.volume.dis \$0.volume.dis.set
+empty 0 -8 0 10 -4160 -117497 -1 94 256;
 #X obj 531 571 outlet~;
 #N canvas 871 124 450 300 copyright 0;
 #X text 31 37 (c) Paulo Casaes \, 2010;
@@ -201,13 +201,15 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X obj 71 50 declare -stdlib zexy/zexy;
 #X obj 100 170 print minimoog depends on;
 #X obj 103 113 loadbang;
-#X msg 101 137 zexy \, muug \, ggee \, flatgui \, hcs \, iemlib \,
-ext13 \, mrpeach \, clyclone;
+#X msg 101 137 zexy (v0.0) \, muug \, ggee \, flatgui \, hcs \, iemlib
+\, ext13 \, mrpeach \, clyclone;
+#X obj 122 15 declare -stdpath pd-minimoog;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X restore 677 472 pd dependencies;
+#X obj 403 642 moog/oscr \$1 \$0 \$3;
 #X connect 0 0 11 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
-#X connect 8 0 17 0;
+#X connect 8 0 16 0;
 #X coords 0 -1 1 1 518 396 2 100 100;

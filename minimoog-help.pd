@@ -1,4 +1,4 @@
-#N canvas 330 86 966 672 10;
+#N canvas 199 86 1097 672 10;
 #X obj 291 580 dac~;
 #X obj 550 79 tgl 15 0 empty empty enable_keyboard_controller 17 7
 0 10 -262144 -1 -1 0 1;
@@ -10,22 +10,23 @@
 #X text 328 560 Mono output;
 #X text 821 162 Enable toggle;
 #X text 820 359 Master volume;
-#X text -53 158 All presets are saved to a group (the first popup).
+#X text -126 153 All presets are saved to a group (the first popup).
 If a group is not specified then default is used. To specify a group
 use a period to seperate the preset name from its group: group.preset
 ;
-#X text -54 217 If more than one period is used than the preset name
+#X text -127 212 If more than one period is used than the preset name
 will be the word after the last period mark: group.moregroup.preset
 ;
-#X text -55 260 Spaces are converted to _;
-#X text -56 276 An enter in the entry box will automatically save with
-the inputed value.;
-#X obj -49 352 tgl 15 0 empty empty vel 17 7 0 10 -232576 -1 -1 0 1
+#X text -128 255 Spaces are converted to _;
+#X text -129 271 An enter in the entry box will automatically save
+with the inputed value.;
+#X obj -115 348 tgl 15 0 empty empty vel 17 7 0 10 -232576 -1 -1 0
+1;
+#X text -126 364 vel in the Portamento box is the only control not
+in the original minimoog. The original minimoog does not interpret
+keyboard velocity values \, with the toggle enabled this minimoog will.
 ;
-#X text -60 368 vel in the Portamento box is the only control not in
-the original minimoog. The original minimoog does not interpret keyboard
-velocity values \, with the toggle enabled this minimoog will.;
-#X obj 301 158 minimoog 8202 default.mem1;
+#X obj 301 158 minimoog 8202 default.mem1 8203;
 #X obj 544 51 moog/midi2osc 8202;
 #X obj 551 132 moog/keyboard2osc 8202;
 #X text 392 593 to create: minimoog oscport (load.preset);
@@ -34,13 +35,13 @@ velocity values \, with the toggle enabled this minimoog will.;
 \, just a fan of the original.;
 #X text -51 71 Requires muug~ \, http://gitorious.org/muug;
 #X obj 287 100 osc~ 440;
-#X text -58 430 I guessed on l and k so they may not be acting like
+#X text -124 426 I guessed on l and k so they may not be acting like
 the do on the real thing;
 #X text 575 112 does not work very well;
 #X text -46 24 requires PD-Extended-0.41 \, check console for errors.
 Make sure nothing like cyclone/counter \, log~ \, getdir \, netsend
 \, netreceive \, mrpeach/udpsend \, popup or entry are missing.;
-#X text -52 562 Tested on OS X and Linux. There are unresolved issues
+#X text -118 558 Tested on OS X and Linux. There are unresolved issues
 on windows. popup seems to not work.;
 #N canvas 156 93 623 400 how_to_use_OSC 0;
 #X obj 27 140 moog/moogsend osc localhost 8202;
@@ -75,12 +76,12 @@ a different version of netsend and netreceive out there.;
 #X connect 14 0 0 0;
 #X restore 546 13 pd how_to_use_OSC;
 #X text -47 3 (C) Paulo Casaes \, 2010 GPL v2 \, v 0.92;
-#X text -53 469 Added an antialiasing before the filter. It takes up
-juice so only turn it on when you need it. That's when sampling rate
-is at 44.1 (maybe 48) kHz and the actual filter frequency hovers above
-10kHz. The actual filter frequency depends on freq \, contour \, k
-and l. If both k and l are on and the contour is low you probably won't
-need the it.;
+#X text -119 465 Added an antialiasing before the filter. It takes
+up juice so only turn it on when you need it. That's when sampling
+rate is at 44.1 (maybe 48) kHz and the actual filter frequency hovers
+above 10kHz. The actual filter frequency depends on freq \, contour
+\, k and l. If both k and l are on and the contour is low you probably
+won't need the it.;
 #X connect 1 0 16 0;
 #X connect 14 0 0 0;
 #X connect 14 0 0 1;

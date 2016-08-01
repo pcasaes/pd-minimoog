@@ -1,4 +1,4 @@
-#N canvas 987 205 635 316 10;
+#N canvas 619 50 691 468 10;
 #X obj 52 37 inlet;
 #X obj 471 97 outlet;
 #X obj -15 251 s \$1.ctrl.oscillator.\$2.octave;
@@ -7,7 +7,7 @@
 #X obj 330 211 s \$1.ctrl.oscillator.\$2.volume.rms;
 #X obj 370 171 s \$1.ctrl.oscillator.\$2.volume.db;
 #X obj 396 137 s \$1.ctrl.oscillator.\$2.mod;
-#N canvas 0 22 602 310 translate 0;
+#N canvas 0 50 602 310 translate 0;
 #X obj 164 44 inlet;
 #X obj 189 244 outlet;
 #X obj 152 91 route float;
@@ -45,6 +45,13 @@
 #X obj 57 60 route /octave /waveform /finetune /volume/rms /volume/db
 /mod;
 #X obj 420 100 outlet;
+#X obj 186 337 r \$1.ctrl.oscillator.\$2.waveform.feedback;
+#X obj 189 361 pack f \$2;
+#X obj 235 428 s \$1.osc.feedback;
+#X obj 147 338 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 120 388 /moog/oscillator/\$2/waveform \$1;
+#X msg 365 388 /touchosc/moog/oscillator/\$2/waveform/1/\$1 1;
 #X connect 0 0 10 0;
 #X connect 8 0 3 0;
 #X connect 9 0 2 0;
@@ -63,3 +70,9 @@
 #X connect 12 4 6 0;
 #X connect 12 5 7 0;
 #X connect 12 6 13 0;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 18 0;
+#X connect 15 0 19 0;
+#X connect 18 0 16 0;
+#X connect 19 0 16 0;

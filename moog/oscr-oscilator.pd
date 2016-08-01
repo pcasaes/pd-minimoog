@@ -1,4 +1,4 @@
-#N canvas 619 50 691 468 10;
+#N canvas 694 59 691 560 10;
 #X obj 52 37 inlet;
 #X obj 471 97 outlet;
 #X obj -15 251 s \$1.ctrl.oscillator.\$2.octave;
@@ -52,6 +52,14 @@
 -1 -1;
 #X msg 120 388 /moog/oscillator/\$2/waveform \$1;
 #X msg 365 388 /touchosc/moog/oscillator/\$2/waveform/1/\$1 1;
+#X obj 344 365 pack f \$2;
+#X obj 313 362 + 1;
+#X obj 6 490 touchosc.feedback.osc.multitoggle \$1 \$2 waveform;
+#X obj 11 517 touchosc.feedback.osc.multitoggle \$1 \$2 octave;
+#X obj 24 458 touchosc.feedback.osc \$1 \$2 finetune;
+#X obj 308 463 touchosc.feedback.osc.volume \$1 \$2 db;
+#X obj 362 494 touchosc.feedback.osc.volume \$1 \$2 rms;
+#X obj 355 526 touchosc.feedback.osc \$1 \$2 mod;
 #X connect 0 0 10 0;
 #X connect 8 0 3 0;
 #X connect 9 0 2 0;
@@ -72,7 +80,7 @@
 #X connect 12 6 13 0;
 #X connect 14 0 15 0;
 #X connect 14 0 17 0;
+#X connect 14 0 21 0;
 #X connect 15 0 18 0;
-#X connect 15 0 19 0;
-#X connect 18 0 16 0;
-#X connect 19 0 16 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;

@@ -26,7 +26,7 @@ with the inputed value.;
 in the original minimoog. The original minimoog does not interpret
 keyboard velocity values \, with the toggle enabled this minimoog will.
 ;
-#X obj 301 158 minimoog 8202 default.mem1 8203;
+#X obj 301 158 minimoog 8202 default.mem1 touchosc.local 8203;
 #X obj 544 51 moog/midi2osc 8202;
 #X obj 551 132 moog/keyboard2osc 8202;
 #X text 392 593 to create: minimoog oscport (load.preset);

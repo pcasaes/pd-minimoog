@@ -1,0 +1,12 @@
+#N canvas 210 349 450 300 10;
+#X obj 104 141 s \$1.osc.feedback;
+#X obj 55 50 r \$1.ctrl.oscillator.\$2.\$3.feedback;
+#X msg 58 105 /moog/oscillator/\$2/\$3 \$1;
+#X obj 354 56 symbol \$3;
+#X obj 373 30 loadbang;
+#X obj 58 74 pack f \$2 s;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 2;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;

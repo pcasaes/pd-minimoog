@@ -1,5 +1,5 @@
-#N canvas 45 507 1136 418 10;
-#N canvas 0 22 450 300 display 0;
+#N canvas 184 243 1136 479 10;
+#N canvas 0 50 450 300 display 0;
 #X obj 125 206 outlet;
 #X obj 131 86 inlet;
 #X obj 132 126 sel 0 1 2 3 4 5;
@@ -39,7 +39,7 @@
 #X connect 5 0 1 0;
 #X restore -412 42 pd calcfinetune;
 #X obj -553 256 dbtorms;
-#N canvas 0 22 639 303 noise 0;
+#N canvas 0 50 639 303 noise 0;
 #X obj 337 143 not;
 #X obj 363 255 outlet~;
 #X obj 353 96 inlet pink;
@@ -49,7 +49,7 @@
 #X obj 196 221 sel -999;
 #X obj 196 190 t f f;
 #X obj 176 135 min 1;
-#N canvas 0 22 450 300 noise 0;
+#N canvas 0 50 450 300 noise 0;
 #X obj 213 111 noise~;
 #X obj 216 172 outlet~;
 #X obj 289 118 inlet;
@@ -57,7 +57,7 @@
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X restore 329 179 pd noise;
-#N canvas 0 22 450 300 pink 1;
+#N canvas 0 50 450 300 pink 0;
 #X obj 216 172 outlet~;
 #X obj 302 100 inlet;
 #X obj 304 133 switch~;
@@ -141,7 +141,7 @@
 #X obj -104 84 + 1;
 #X obj -99 63 * -1;
 #X obj -490 289 *~;
-#N canvas 0 22 450 300 mixout 0;
+#N canvas 0 50 450 300 mixout 0;
 #X obj 132 138 *~;
 #X msg 187 137 1;
 #X msg 160 129 0;
@@ -171,7 +171,7 @@
 #X connect 12 0 6 0;
 #X connect 13 0 0 1;
 #X restore -563 286 pd mixout;
-#N canvas 0 22 613 312 memory 0;
+#N canvas 0 50 613 312 memory 0;
 #X obj 22 80 inlet;
 #X obj 83 81 inlet;
 #X obj 148 80 inlet;
@@ -211,17 +211,18 @@
 #X obj 101 136 hradio 15 1 1 6 \$0.osc.type \$0.osc.type.set empty
 0 -8 0 10 -20806 -117497 -1 3;
 #X obj 205 113 flatgui/knob 32 32 -9 9 0 0 \$0.tune.fader \$0.tune.fader.set
-fine_tune -12 -8 0 9 5.84672e+06 1 5.84677e+06 0 1;
+fine_tune -12 -8 0 9 5.97805e+007 5.97805e+007 5.97805e+007 1533 1
+;
 #X obj 101 152 cnv 15 90 18 empty \$0.osc.label square 5 8 0 14 -117497
 -1 0;
 #X obj 101 117 cnv 15 90 18 empty \$0.octave.label 1_octave 5 8 0 14
 -117497 -1 0;
-#X obj 204 154 nbx 5 14 -1e+37 1e+37 0 0 \$0.tune \$0.tune.set empty
-0 -8 0 10 -257985 -1 -1 0 256;
+#X obj 204 154 nbx 5 14 -1e+037 1e+037 0 0 \$0.tune \$0.tune.set empty
+0 -8 0 10 -257985 -1 -1 -0.0987097 256;
 #X obj 333 112 flatgui/knob 32 32 101 1 1 1 \$0.vol.noise.fader \$0.vol.noise.fader.set
-noise_vol 0 -8 0 9 5.84682e+06 1 5.84686e+06 3100 1;
-#X obj 332 154 nbx 3 14 -1e+37 1e+37 0 0 \$0.vol.noise \$0.vol.noise.set
-empty 0 -8 0 10 -4160 -117497 -1 100 256;
+noise_vol 0 -8 0 9 5.97805e+007 5.97805e+007 5.97805e+007 0 1;
+#X obj 332 154 nbx 3 14 -1e+037 1e+037 0 0 \$0.vol.noise \$0.vol.noise.set
+empty 0 -8 0 10 -4160 -117497 -1 -0 256;
 #X obj 195 181 tgl 15 1 \$0.noise \$0.noise.set noise 17 8 0 10 -191407
 -1 -1 1 1;
 #X obj 245 182 hradio 15 1 1 2 \$0.noise.type \$0.noise.type.set empty
@@ -240,8 +241,8 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 0;
 #X obj 392 180 cnv 15 20 20 empty empty osc 2 10 0 10 -117497 -1 0
 ;
-#X obj 103 182 nbx 4 14 -1e+37 1e+37 0 0 \$0.freq.ro \$0.freq.set empty
-0 -8 0 10 -1 -117497 -1 0 256;
+#X obj 103 182 nbx 4 14 -1e+037 1e+037 0 0 \$0.freq.ro \$0.freq.set
+empty 0 -8 0 10 -1 -117497 -1 255.726 256;
 #X obj -64 143 s \$0.noise.mod.set;
 #X obj -50 216 r \$0.noise.mod;
 #X obj 149 248 r \$0.noise.type;
@@ -249,10 +250,10 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X obj -149 -5 s \$0.noise.type.set;
 #X obj 5 16 s \$0.noise.set;
 #X obj -127 210 r \$0.noise;
-#N canvas 131 318 412 325 noise 0;
+#N canvas 873 139 412 325 noise 0;
 #X obj 155 63 r \$0.vol.noise.fader;
 #X obj 153 208 s \$0.vol.noise.fader.set;
-#N canvas 0 22 318 245 vol 0;
+#N canvas 0 50 318 245 vol 0;
 #X obj 124 99 - 1;
 #X obj 125 118 - 100;
 #X obj 126 141 * -1;
@@ -291,7 +292,22 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X obj 100 99 rmstodb;
 #X obj 77 26 r \$3.ctrl.oscillator.\$4.noise.volume.rms;
 #X obj 76 48 r \$3.ctrl.oscillator.\$4.noise.volume.db;
+#N canvas 454 66 318 245 ivol 0;
+#X obj 97 43 inlet;
+#X obj 132 175 outlet;
+#X obj 125 118 * -1;
+#X obj 126 141 + 1;
+#X obj 124 99 - 100;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X restore 25 213 pd ivol;
+#X obj 43 234 dbtorms;
+#X obj 25 257 s \$3.ctrl.oscillator.\$4.noise.volume.rms.feedback;
+#X obj 12 278 s \$3.ctrl.oscillator.\$4.noise.volume.db.feedback;
 #X connect 0 0 2 0;
+#X connect 0 0 11 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
 #X connect 5 0 1 0;
@@ -300,15 +316,18 @@ empty 0 -8 0 10 -4160 -117497 -1 100 256;
 #X connect 8 0 7 0;
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
+#X connect 11 0 12 0;
+#X connect 11 0 14 0;
+#X connect 12 0 13 0;
 #X restore 312 -19 pd noise vol;
 #X obj -180 32 s \$0.vol.noise.fader.set;
 #X obj -250 228 r \$0.vol.noise;
 #X obj 276 112 flatgui/knob 32 32 101 1 1 1 \$0.vol.osc.fader \$0.vol.osc.fader.set
-osc_vol 0 -8 0 9 5.84397e+06 1 5.84686e+06 0 1;
-#X obj 275 154 nbx 3 14 -1e+37 1e+37 0 0 \$0.vol.osc \$0.vol.osc.set
-empty 0 -8 0 10 -4160 -117497 -1 0 256;
-#N canvas 799 77 412 325 osc 0;
-#N canvas 0 22 318 245 vol 0;
+osc_vol 0 -8 0 9 5.97805e+007 5.97805e+007 5.97805e+007 3100 1;
+#X obj 275 154 nbx 3 14 -1e+037 1e+037 0 0 \$0.vol.osc \$0.vol.osc.set
+empty 0 -8 0 10 -4160 -117497 -1 100 256;
+#N canvas 154 91 412 325 osc 0;
+#N canvas 0 50 318 245 vol 0;
 #X obj 124 99 - 1;
 #X obj 125 118 - 100;
 #X obj 126 141 * -1;
@@ -349,15 +368,33 @@ empty 0 -8 0 10 -4160 -117497 -1 0 256;
 #X obj 90 89 rmstodb;
 #X obj 67 16 r \$3.ctrl.oscillator.\$4.volume.rms;
 #X obj 66 38 r \$3.ctrl.oscillator.\$4.volume.db;
+#X obj 86 212 dbtorms;
+#N canvas 454 66 318 245 ivol 0;
+#X obj 97 43 inlet;
+#X obj 132 175 outlet;
+#X obj 125 118 * -1;
+#X obj 126 141 + 1;
+#X obj 124 99 - 100;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X restore 255 178 pd ivol;
+#X obj 110 262 s \$3.ctrl.oscillator.\$4.volume.rms.feedback;
+#X obj 109 284 s \$3.ctrl.oscillator.\$4.volume.db.feedback;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 0;
 #X connect 3 0 0 0;
+#X connect 3 0 12 0;
 #X connect 4 0 2 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 12 0 14 0;
 #X restore 313 18 pd osc vol;
 #X obj -269 38 s \$0.vol.osc.fader.set;
 #X obj -328 226 r \$0.vol.osc;
@@ -378,16 +415,18 @@ empty 0 -8 0 10 -4160 -117497 -1 0 256;
 #X obj 151 132 s \$0.tune.set;
 #X obj 153 208 s \$0.tune.fader.set;
 #X obj 217 171 r \$3.ctrl.oscillator.\$4.finetune;
+#X obj 150 247 s \$3.ctrl.oscillator.\$4.finetune.feedback;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
+#X connect 2 0 6 0;
 #X connect 5 0 4 0;
 #X restore 321 47 pd tune;
 #X obj -328 166 r \$0.tune;
 #X obj -364 94 s \$0.tune.fader.set;
 #X obj -422 141 s \$0.kbd.set;
 #X obj -401 209 r \$0.kbd;
-#N canvas 719 41 645 306 memory 0;
+#N canvas 719 50 645 306 memory 0;
 #X obj 42 210 outlet;
 #X obj 107 215 outlet;
 #X obj 167 213 outlet;
@@ -426,25 +465,43 @@ empty 0 -8 0 10 -4160 -117497 -1 0 256;
 #X msg -476 106 2 \$1;
 #X obj -473 65 pow;
 #X floatatom -485 89 5 0 0 0 - - -, f 5;
-#N canvas 0 22 514 406 osc 0;
-#X obj 29 -2 s \$0.octave.set;
+#N canvas 0 50 609 406 osc 0;
+#X obj 24 -36 s \$0.octave.set;
 #X obj 26 -63 r \$3.ctrl.oscillator.\$4.octave;
 #X obj 71 135 s \$0.osc.type.set;
 #X obj 75 57 r \$3.ctrl.oscillator.\$4.waveform;
-#X obj 265 178 s \$0.noise.set;
+#X obj 201 144 s \$0.noise.set;
 #X obj 196 118 r \$3.ctrl.oscillator.\$4.noise.out;
 #X obj 287 76 s \$0.noise.type.set;
 #X obj 225 -5 r \$3.ctrl.oscillator.\$4.noise.type;
 #X obj 62 286 s \$0.kbd.set;
 #X obj 40 241 r \$3.ctrl.oscillator.\$4.kbd;
-#X obj 317 313 s \$0.noise.mod.set;
+#X obj 278 296 s \$0.noise.mod.set;
 #X obj 265 264 r \$3.ctrl.oscillator.\$4.mod.mix;
+#X obj 64 208 s \$3.ctrl.oscillator.\$4.waveform.feedback;
+#X obj 25 -17 r \$0.octave;
+#X obj 25 11 s \$3.ctrl.oscillator.\$4.octave.feedback;
+#X obj 68 169 r \$0.osc.type;
+#X obj 20 358 s \$3.ctrl.oscillator.\$4.kbd.feedback;
+#X obj 44 321 r \$0.kbd;
+#X obj 323 340 r \$0.noise.mod;
+#X obj 336 371 s \$3.ctrl.oscillator.\$4.mod.mix.feedback;
+#X obj 360 20 r \$0.noise.type;
+#X obj 318 47 s \$3.ctrl.oscillator.\$4.noise.type.feedback;
+#X obj 336 176 s \$3.ctrl.oscillator.\$4.noise.out.feedback;
+#X obj 331 150 r \$0.noise;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;
 #X connect 7 0 6 0;
 #X connect 9 0 8 0;
 #X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 15 0 12 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 23 0 22 0;
 #X restore 230 -7 pd osc set;
 #X obj -391 334 moog/smooth;
 #X obj -296 344 moog/smooth;

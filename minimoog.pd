@@ -111,7 +111,7 @@
 #X obj 368 79 throw~ \$0.external.in;
 #X obj 100 100 moog/presets \$0 \$2;
 #X obj 582 139 vsl 36 338 101 1 1 0 \$0.master.vol \$0.master.vol.set
-empty 0 -9 0 10 -4160 -261234 -1 19491 1;
+empty 0 -9 0 10 -4160 -261234 -1 21770 1;
 #N canvas 0 50 839 364 vol 0;
 #X obj 203 231 r \$0.master.vol;
 #X obj 148 205 s \$0.master.vol.set;
@@ -164,8 +164,13 @@ empty 0 -9 0 10 -4160 -261234 -1 19491 1;
 #X obj 368 63 r \$0.ctrl.volume.rms;
 #X obj 263 32 r \$0.ctrl.volume.db;
 #X floatatom 355 319 5 0 0 0 - - -, f 5;
+#X obj 126 281 dbtorms;
+#X obj 56 345 s \$0.ctrl.volume.rms.feedback;
+#X obj 145 326 s \$0.ctrl.volume.db.feedback;
 #X connect 0 0 2 0;
 #X connect 2 0 8 0;
+#X connect 2 0 21 0;
+#X connect 2 0 23 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
 #X connect 4 0 14 0;
@@ -182,9 +187,10 @@ empty 0 -9 0 10 -4160 -261234 -1 19491 1;
 #X connect 17 0 3 0;
 #X connect 18 0 17 0;
 #X connect 19 0 3 0;
+#X connect 21 0 22 0;
 #X restore 693 558 pd vol;
 #X obj 582 481 nbx 3 14 -1e+037 1e+037 0 0 \$0.volume.dis \$0.volume.dis.set
-empty 0 -8 0 10 -4160 -117497 -1 94 256;
+empty 0 -8 0 10 -4160 -117497 -1 95.8765 256;
 #X obj 531 571 outlet~;
 #N canvas 871 124 450 300 copyright 0;
 #X text 31 37 (c) Paulo Casaes \, 2010;

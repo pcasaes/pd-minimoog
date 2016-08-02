@@ -139,7 +139,7 @@ and 1 waveform);
 #X connect 36 9 18 0;
 #X connect 37 0 16 0;
 #X restore 341 29 pd msg;
-#N canvas 137 139 977 363 vc 0;
+#N canvas 374 303 977 419 vc 0;
 #X obj 68 174 s \$2.ctrl.vc;
 #X obj 62 208 s \$2.ctrl.bend;
 #X obj 166 174 s \$2.ctrl.mod;
@@ -270,6 +270,10 @@ and 1 waveform);
 #X obj 106 308 touchosc.rms.feedback \$2 \$2.ctrl.vc.portamento /moog/vc/portamento
 30SqrtSqrt;
 #X obj 489 314 touchosc.feedback \$2 \$2.ctrl.vc.portamento.vel /moog/vc/portamento/vel
+;
+#X obj 57 362 touchosc.feedback \$2 \$2.ctrl.volume.db /moog/volume/rdb
+;
+#X obj 248 388 touchosc.feedback \$2 \$2.ctrl.volume.rms /moog/volume/rms
 ;
 #X connect 5 0 10 0;
 #X connect 8 0 9 0;

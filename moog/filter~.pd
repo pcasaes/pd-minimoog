@@ -268,23 +268,23 @@
 #X obj 383 26 r \$3.ctrl.filter.contour;
 #X obj 100 100 cnv 15 165 131 empty empty Filter 80 12 0 14 -261234
 -66577 0;
-#X obj 103 210 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-10 -204800 -1 -1 1839.68 256;
+#X obj 103 210 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-204800 -1 -1 1843.55 256;
 #X obj 108 139 vsl 30 64 20 15000 1 1 empty empty freq 0 -9 0 10 -204800
--1 -1 4303 1;
-#X obj 160 210 nbx 4 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-10 -203904 -1 -1 0.964463 256;
+-1 -1 4305 1;
+#X obj 160 210 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-203904 -1 -1 3.75631 256;
 #X obj 157 139 vsl 30 64 0.01 10 1 1 empty empty Q 0 -9 0 10 -203904
--1 -1 4167 1;
-#X obj 208 210 nbx 3 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-10 -232576 -1 -1 40.932 256;
+-1 -1 5407 1;
+#X obj 208 210 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-232576 -1 -1 18.0752 256;
 #X obj 207 139 vsl 15 64 1 101 1 1 empty empty contour 0 -9 0 10 -232576
--1 -1 5100 1;
+-1 -1 4025 1;
 #X obj 274 201 - 1;
 #X obj 229 143 tgl 15 1 empty empty mod 17 7 0 10 -258113 -1 -1 1 1
 ;
 #X obj 229 163 tgl 15 1 empty empty k 17 7 0 10 -4034 -1 -1 1 1;
-#X obj 229 183 tgl 15 1 empty empty l 17 7 0 10 -4034 -1 -1 0 1;
+#X obj 229 183 tgl 15 1 empty empty l 17 7 0 10 -4034 -1 -1 1 1;
 #X msg 61 170 set \$1;
 #X msg 59 145 set \$1;
 #X msg 304 177 set \$1;
@@ -304,7 +304,12 @@
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X restore 528 195 pd antialias memory;
-#X obj 375 255 s \$3.ctrl.filter.freq.feedback;
+#X obj 447 308 s \$3.ctrl.filter.freq.feedback;
+#X obj 457 338 s \$3.ctrl.filter.q.feedback;
+#X obj 402 267 s \$3.ctrl.filter.contour.feedback;
+#X obj 371 176 s \$3.ctrl.filter.mod.feedback;
+#X obj 356 208 s \$3.ctrl.filter.vc.k.feedback;
+#X obj 366 230 s \$3.ctrl.filter.vc.l.feedback;
 #X connect 0 0 6 0;
 #X connect 1 0 0 1;
 #X connect 2 0 12 0;
@@ -326,18 +331,23 @@
 #X connect 13 0 22 0;
 #X connect 13 0 0 2;
 #X connect 13 0 3 1;
+#X connect 13 0 31 0;
 #X connect 14 0 13 0;
 #X connect 15 0 24 0;
 #X connect 15 0 1 1;
 #X connect 15 0 3 2;
 #X connect 16 0 17 0;
 #X connect 17 0 15 0;
+#X connect 17 0 32 0;
 #X connect 18 0 3 3;
 #X connect 18 0 1 2;
+#X connect 18 0 33 0;
 #X connect 19 0 3 4;
 #X connect 19 0 1 3;
+#X connect 19 0 34 0;
 #X connect 20 0 3 5;
 #X connect 20 0 1 4;
+#X connect 20 0 35 0;
 #X connect 21 0 12 0;
 #X connect 22 0 14 0;
 #X connect 23 0 16 0;

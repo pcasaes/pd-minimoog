@@ -1,4 +1,4 @@
-#N canvas 55 87 782 311 10;
+#N canvas 30 310 812 411 10;
 #X obj 52 6 inlet;
 #X obj 44 135 unpack f f f f;
 #X obj 28 225 s \$1.ctrl.envelope.\$2.attack;
@@ -26,6 +26,14 @@
 #X obj 492 137 t f f;
 #X obj 492 159 *;
 #X obj 403 70 route /attack/rms /decay/rms /sustain/rms;
+#X obj 29 286 touchosc.rms.feedback \$1 \$1.ctrl.envelope.\$2.attack
+/moog/envelope/\$2/attack 1000SqrtSqrt-10;
+#X obj 375 288 touchosc.rms.feedback \$1 \$1.ctrl.envelope.\$2.decay
+/moog/envelope/\$2/decay 700Sqrt-1;
+#X obj 384 336 touchosc.rms.feedback \$1 \$1.ctrl.envelope.\$2.sustain
+/moog/envelope/\$2/sustain InvSqrt100;
+#X obj 38 353 touchosc.feedback \$1 \$1.ctrl.envelope.\$2.release /moog/envelope/\$2/release
+;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;

@@ -267,6 +267,10 @@ and 1 waveform);
 #X obj 575 195 * 30.2;
 #X obj 599 146 t f f;
 #X obj 601 166 *;
+#X obj 106 308 touchosc.rms.feedback \$2 \$2.ctrl.vc.portamento /moog/vc/portamento
+30SqrtSqrt;
+#X obj 489 314 touchosc.feedback \$2 \$2.ctrl.vc.portamento.vel /moog/vc/portamento/vel
+;
 #X connect 5 0 10 0;
 #X connect 8 0 9 0;
 #X connect 9 0 0 0;
@@ -400,12 +404,16 @@ and 1 waveform);
 #X connect 13 2 6 0;
 #X connect 13 3 3 0;
 #X restore 252 329 pd oscilator control;
-#N canvas 51 50 450 300 external 0;
+#N canvas 51 50 539 354 external 0;
 #X obj 154 28 inlet;
 #X obj 96 178 s \$2.ctrl.external.volume.rms;
 #X obj 220 221 s \$2.ctrl.external.volume.db;
 #X obj 161 71 mrpeach/routeOSC /external;
 #X obj 83 115 route /volume/rms /volume/db;
+#X obj 82 265 touchosc.feedback \$2 \$2.ctrl.external.volume.rms /moog/external/volume/rms
+;
+#X obj 89 301 touchosc.feedback \$2 \$2.ctrl.external.volume.db /moog/external/volume/db
+;
 #X connect 0 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;

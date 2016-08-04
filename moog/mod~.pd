@@ -1,4 +1,4 @@
-#N canvas 734 267 467 316 10;
+#N canvas 18 376 467 316 10;
 #X obj 152 159 *~;
 #X obj 236 161 * 2;
 #X text 28 23 1) name 2) frequency 3) note to modulate 4) modulation
@@ -8,7 +8,7 @@ signal;
 #X obj 164 183 moog/writemem \$1 \$2;
 #X obj 100 100 cnv 15 214 20 empty empty Modulate 30 10 0 14 -240285
 -66577 0;
-#X obj 106 102 tgl 15 1 empty empty empty 17 7 0 10 -258113 -1 -1 1
+#X obj 106 102 tgl 15 1 empty empty empty 17 7 0 10 -258113 -1 -1 0
 1;
 #X obj 148 129 r~ \$3.modulate;
 #X obj -7 289 outlet~;
@@ -31,6 +31,7 @@ signal;
 #X obj 238 142 r \$3.modulate.m;
 #X obj 82 52 r \$3.ctrl.oscillator.\$4.mod;
 #X obj 12 263 pmux2~;
+#X obj 124 233 s \$3.ctrl.oscillator.\$4.mod.feedback;
 #X connect 0 0 10 1;
 #X connect 1 0 0 1;
 #X connect 3 0 10 0;
@@ -39,6 +40,7 @@ signal;
 #X connect 7 0 5 0;
 #X connect 7 0 10 2;
 #X connect 7 0 13 2;
+#X connect 7 0 14 0;
 #X connect 8 0 0 0;
 #X connect 10 0 13 1;
 #X connect 11 0 1 0;

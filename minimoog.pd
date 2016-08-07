@@ -1,6 +1,6 @@
 #N canvas 219 54 816 669 10;
-#X declare -stdlib zexy/zexy;
 #X declare -stdpath pd-minimoog;
+#X declare -stdpath zexy;
 #X obj 370 41 inlet~;
 #N canvas 482 145 599 597 voltagenoise 0;
 #X obj 502 477 +~ 1;
@@ -50,7 +50,7 @@
 #X obj 368 79 throw~ \$0.external.in;
 #X obj 100 100 moog/presets \$0 \$2;
 #X obj 582 139 vsl 36 338 101 1 1 0 \$0.master.vol \$0.master.vol.set
-empty 0 -9 0 10 -4160 -261234 -1 19336 1;
+empty 0 -9 0 10 -4160 -261234 -1 0 1;
 #N canvas 0 50 839 364 vol 0;
 #X obj 203 231 r \$0.master.vol;
 #X obj 148 205 s \$0.master.vol.set;
@@ -129,7 +129,7 @@ empty 0 -9 0 10 -4160 -261234 -1 19336 1;
 #X connect 21 0 22 0;
 #X restore 693 558 pd vol;
 #X obj 582 481 nbx 3 14 -1e+37 1e+37 0 0 \$0.volume.dis \$0.volume.dis.set
-empty 0 -8 0 10 -4160 -117497 -1 93.8497 256;
+empty 0 -8 0 10 -4160 -117497 -1 0 256;
 #X obj 531 571 outlet~;
 #N canvas 871 124 450 300 copyright 0;
 #X text 31 37 (c) Paulo Casaes \, 2010;
@@ -143,14 +143,14 @@ empty 0 -8 0 10 -4160 -117497 -1 93.8497 256;
 #X obj 100 303 moog/oscilatorControl~ \$0.memory 4 \$0 35 2;
 #X obj 100 395 moog/oscilatorControlLFO~ \$0.memory 8 \$0 3;
 #N canvas 668 157 450 300 dependencies 0;
-#X obj 71 50 declare -stdlib zexy/zexy;
 #X obj 100 170 print minimoog depends on;
 #X obj 103 113 loadbang;
 #X obj 122 15 declare -stdpath pd-minimoog;
 #X msg 101 137 zexy (v0.0) \, muug \, ggee \, flatgui \, hcs \, iemlib
 \, ext13 \, mrpeach \, clyclone \, shotnoise;
-#X connect 2 0 4 0;
-#X connect 4 0 1 0;
+#X obj 71 50 declare -stdpath zexy;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
 #X restore 677 472 pd dependencies;
 #X obj 403 642 moog/oscr \$1 \$0 \$3 \$4;
 #X connect 0 0 11 0;
